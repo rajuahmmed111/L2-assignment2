@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { TProduct } from './product.interface';
-import Product from './project.model';
+import Product from './product.model';
 
 const createProduct = async (product: TProduct) => {
   const result = await Product.create(product);
@@ -9,7 +9,7 @@ const createProduct = async (product: TProduct) => {
 
 const getAllProducts = async (searchTerm: any) => {
   const regex = new RegExp(searchTerm, 'i');
-  const result = await Product.find({ description: { $regex: regex } });
+  const result = await Product.find({ category: { $regex: regex } });
   return result;
 };
 

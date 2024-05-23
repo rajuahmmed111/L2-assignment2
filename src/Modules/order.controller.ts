@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Request, Response } from 'express';
 import { OrdersServices } from './order.service';
 import { orderZodSchema } from './order.zod.validation';
@@ -5,6 +6,7 @@ import { orderZodSchema } from './order.zod.validation';
 const createOrder = async (req: Request, res: Response) => {
   try {
     const orderData = req.body;
+    // console.log(orderData);
 
     const orderZod = orderZodSchema.parse(orderData);
     const result = await OrdersServices.createOrder(orderZod);

@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { TOrders } from './order.interface';
 import Order from './order.model';
 
-const createOrder = async (order: TOrders) => {
-  const result = await Order.create(order);
+const createOrder = async (orders: TOrders) => {
+  const result = await Order.create(orders);
+
   return result;
 };
 
