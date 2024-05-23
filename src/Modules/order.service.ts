@@ -2,8 +2,8 @@
 import { TOrders } from './order.interface';
 import Order from './order.model';
 
-const createOrder = async (orders: TOrders) => {
-  const result = await Order.create(orders);
+const createOrder = async (order: TOrders) => {
+  const result = await Order.create(order);
 
   return result;
 };
